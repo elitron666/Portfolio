@@ -15,27 +15,51 @@
   }
 
 function ShowCat() {
-document.getElementById('katzi').style.display = 'flex';
-document.getElementById('hilfebutton').style.display = 'none';
+  document.getElementById('katzi').style.display = 'flex';
+  document.getElementById('hilfebutton').style.display = 'none';
+
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+
+  if (modal.style.display === 'block')
+  {
+    randomSpruch()
+    console.log(document.getElementById(modalImg.id))
+    document.getElementById('randomSpruch').textContent = modalImg.alt;
+  }
 }
 
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
+  var modal = document.getElementById("myModal");
+
+  if (document.getElementById('katzi').style.display === 'flex')
+  {
+    randomSpruch()
+  }
   modal.style.display = "none";
 }
+
+function initThumbnailClick() {
+  var thumbnails = document.getElementsByClassName("thumbnail");
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+
+  for (var i = 0; i < thumbnails.length; ++i) {
+    var img = thumbnails[i]
+
+    img.onclick = function() {
+      if (document.getElementById('katzi').style.display === 'flex')
+      {
+        randomSpruch()
+        document.getElementById('randomSpruch').textContent = this.alt;
+      }
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      modalImg.id = this.id
+    }
+  }
+}
+
+initThumbnailClick()

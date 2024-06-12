@@ -177,22 +177,7 @@
   display: block;
   color: black;
 }
-.achtsam:hover {opacity: 0.8;}
-.syndrome1:hover {opacity: 0.8;}
-.enjoy:hover {opacity: 0.8;}
-.waronwomen:hover {opacity: 0.8;}
-.mager:hover {opacity: 0.8;}
-.syndrome2:hover {opacity: 0.8;}
-.youthavoiders:hover {opacity: 0.8;}
-.Kneipe:hover {opacity: 0.8;}
-.geballer:hover {opacity: 0.8;}
-.jealous:hover {opacity: 0.8;}
-.kaputt:hover {opacity: 0.8;}
-.zukunftsplaene:hover {opacity: 0.8;}
-.rottenmind:hover {opacity: 0.8;}
-.haexler:hover {opacity: 0.8;}
-.library:hover {opacity: 0.8;}
-.krise:hover {opacity: 0.8;}
+.thumbnail:hover {opacity: 0.8;}
 
  /* Style the Image Used to Trigger the Modal */
 #myImg {
@@ -226,20 +211,8 @@
   max-width: 700px;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
 /* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
+.modal-content {
   animation-name: zoom;
   animation-duration: 0.6s;
 }
