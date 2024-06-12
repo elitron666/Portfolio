@@ -19,13 +19,14 @@ function ShowCat() {
   document.getElementById('hilfebutton').style.display = 'none';
 
   var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
 
   if (modal.style.display === 'block')
   {
+    var imageId = document.getElementsByClassName("modal-content")[0].id;
+    var image = document.getElementById(imageId)
+
     randomSpruch()
-    console.log(document.getElementById(modalImg.id))
-    document.getElementById('randomSpruch').textContent = modalImg.alt;
+    document.getElementById('randomSpruch').textContent = image.alt;
   }
 }
 
