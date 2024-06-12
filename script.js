@@ -1,20 +1,47 @@
-
-
-  var spruch = Array("Ey, Kollege, haste mal ne Ecke Tabak?",
-  "Dies, das und so, weeßte ja.",
+var spruch = Array("Ey, Kollege, haste mal ne Ecke Tabak?",
+"Dies, das und so, weeßte ja.",
 "Stell dich, du Flitzpiepe.",
 "Das letzte Bier gestern war wieder schlecht, du…",
 "Ey Hippieschwein. Mach’n Abflug. ",
 "Boar, hat wer ne Ibu?");
 
-  function randomSpruch() {
-    var randomSpruch = spruch[Math.floor(Math.random() * spruch.length)];
-    document.getElementById('randomSpruch').textContent = randomSpruch;
-    document.getElementById('randomSpruch').style.display = 'flex';
+var spruchCounter = 0;
+var katziRaucht = false;
 
+function katziHatGeraucht() {
+  document.getElementById('katzi').style.display = 'flex';
+  document.getElementById('randomSpruch').style.display = 'flex';
+  document.getElementById('randomSpruch').textContent = "bin wieder da";
+  katziRaucht = false;
+}
+
+function katziWillRauchen() {
+  document.getElementById('katzi').style.display = 'none';
+  document.getElementById('randomSpruch').style.display = 'none';
+  setTimeout(katziHatGeraucht, 5000);
+}
+
+function randomSpruch() {
+  if (katziRaucht)
+    return;
+
+  if (spruchCounter++ === 5) {
+    katziRaucht = true;
+    setTimeout(katziWillRauchen, 5000);
+    spruchCounter = 0;
+    document.getElementById('randomSpruch').textContent = "Tschau, bin rachn";
+    return;
   }
 
+  var randomSpruch = spruch[Math.floor(Math.random() * spruch.length)];
+  document.getElementById('randomSpruch').textContent = randomSpruch;
+  document.getElementById('randomSpruch').style.display = 'flex';
+}
+
 function ShowCat() {
+  if (katziRaucht)
+    return;
+
   document.getElementById('katzi').style.display = 'flex';
   document.getElementById('hilfebutton').style.display = 'none';
 
