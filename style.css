@@ -1,0 +1,195 @@
+/* include your fonts */
+@font-face {
+    font-family: "Clouds";
+    src: url("/Users/eli/Downloads/HTML-CSS_Boilerplate-main/assets/fonts/DIN Condensed Bold.ttf") format("woff2"),
+      url("/Users/eli/Downloads/HTML-CSS_Boilerplate-main/assets/fonts/DIN Condensed Bold.ttf") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* keep this to get rid of the default styling */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+  }
+
+  body {
+  background-color: rgb(199, 199, 199);
+  font-family: monospace; 
+  display: flex; 
+  flex-direction: column;
+  height: 100vh; 
+  font-size: 15PX;
+  }
+
+  .navigation {
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 1px;
+    font-family: monospace;
+    
+    
+}
+
+.navigation a {
+    color: rgb(31, 64, 70); 
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: red;
+}
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+
+      /* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  /* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }  
+
+
+
+ 
+  .button-katzen-wrapper {
+    position: fixed;
+    top: 10; 
+    left: 10px; 
+    right: 10px;
+    bottom: 10px; 
+  }
+
+  #hilfebutton {
+    z-index: 2;
+    display: flex; 
+    width: 40px; 
+    position: fixed;
+    left: 86vw; 
+    bottom: 8vw;
+    animation-name: scale;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes scale {
+     0% { transform: scale(1.2) }
+     50% { transform: scale(1.0) }
+     100%  { transform: scale(1.2) }
+  }
+  
+
+  #randomSpruch{
+    position: fixed;
+    display: none;
+    left: 65vw; 
+    bottom: 4vw; 
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px; 
+    text-align: justify;
+    width: fit-content;
+    outline-color: black;
+    outline-style: solid;
+    outline-width: medium;
+
+  } 
+ 
+  #katzi {
+   /*display: none; /* Hidden by default */
+    width: 175px; 
+    display: none;
+    position: fixed;
+    left: 76vw; 
+    bottom: 5vw; 
+    animation-name: rotation;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor:pointer; 
+  }
+
+  @keyframes rotation {
+     0% { transform: rotate(20deg) }
+     50% { transform: rotate(-20deg) }
+     100%  { transform: rotate(20deg) }
+  }
+ 
+/* .syndrome1 {
+    transition:transform 0.25s ease;
+} */
+
+/* .syndrome1:hover {
+    -webkit-transform:scale(1.5); /* or some other value */
+/*     transform:scale(1.5);
+} */ 
+
+.hilfespruch {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 60vw; 
+  bottom: 2.5vw; 
+  box-sizing: border-box;
+  background-color: white;
+  padding: 10px; 
+  text-align: justify;
+  width: fit-content;
+  outline-color: black;
+    outline-style: solid;
+    outline-width: medium;
+  margin-right: 5vw; 
+}
+  
+
+#hilfebutton:hover + .hilfespruch {
+  display: block;
+  color: black;
+}
+.achtsam:hover {opacity: 0.8;}
+.syndrome1:hover {opacity: 0.8;}
+.enjoy:hover {opacity: 0.8;}
+.waronwomen:hover {opacity: 0.8;}
+.mager:hover {opacity: 0.8;}
+.syndrome2:hover {opacity: 0.8;}
+.youthavoiders:hover {opacity: 0.8;}
+.Kneipe:hover {opacity: 0.8;}
+.geballer:hover {opacity: 0.8;}
+.jealous:hover {opacity: 0.8;}
+.kaputt:hover {opacity: 0.8;}
+.zukunftsplaene:hover {opacity: 0.8;}
+.rottenmind:hover {opacity: 0.8;}
+.haexler:hover {opacity: 0.8;}
+.library:hover {opacity: 0.8;}
+.krise:hover {opacity: 0.8;}
+
