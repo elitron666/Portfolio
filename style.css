@@ -24,30 +24,52 @@
   font-size: 15PX;
   }
 
-  .navigation {
+  #navigation {
     margin: 10px;
+    margin-top: 0px; 
     padding: 15px;
     display: flex;
     justify-content: space-evenly;
     border-radius: 1px;
     font-family: monospace;
-    
+    overflow: hidden; 
+    background-color: rgb(199, 199, 199);
+    z-index: 999; 
+    width: 100%; 
     
 }
 
-.navigation a {
+#navigation a {
     color: rgb(31, 64, 70); 
     text-decoration: none;
+    display: block; 
 }
 
-.navigation a:hover {
+#navigation a:hover {
     color: red;
 }
 
-    .row {
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px; 
+}
+
+ .row {
         display: flex;
         flex-wrap: wrap;
         padding: 0 4px;
+        margin-top: 40px; 
       }
 
       /* Create four equal columns that sits next to each other */
@@ -115,14 +137,16 @@
     display: none;
     left: 65vw; 
     bottom: 4vw; 
-    box-sizing: border-box;
+    box-sizing: content-box;
     background-color: white;
     padding: 10px; 
-    text-align: justify;
+    text-align: left;
     width: fit-content;
     outline-color: black;
     outline-style: solid;
     outline-width: medium;
+    max-width: 30vw;
+    margin-right: 10px; 
 
   } 
  
@@ -138,6 +162,7 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     cursor:pointer; 
+    z-index: 1;
   }
 
   @keyframes rotation {
@@ -207,8 +232,8 @@
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  width: 50%;
+  max-width: 500;
 }
 
 /* Add Animation - Zoom in the Modal */
